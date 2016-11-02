@@ -53,6 +53,20 @@ $(document).ready(function() {
 	});
 	$('.lk-tab-wrap:last(:not)').hide();
 
+
+	$('.subscribe__faq-head a').on('click', function () {
+		$(this).parent().toggleClass('active');
+		$(this).parent().next().slideToggle();
+		return false;
+	});
+
+	$('.anchor-menu a').on('click', function () {
+		var id = $(this).attr('href'),
+		top = $(id).offset().top;
+		$('body,html').animate({scrollTop: top}, 1500);
+		return false;
+	});
+
 	
 
 })
