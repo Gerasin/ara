@@ -1,4 +1,80 @@
 $(document).ready(function() {
+
+	$('.subscribe-send').on('click', function () {
+		var subscribeCheck = $(this).parents('form').find('input[type="radio"]:checked').length;
+		if(subscribeCheck == 0) {
+			$('.message-error').fadeIn();
+		} else {	
+			$('.message-ok').fadeIn();
+		};
+		setTimeout("$('.subscribe-message').fadeOut()", 5000);
+		return false
+	});
+	$('.subscribe-message__close').on('click', function () {
+		$('.subscribe-message').fadeOut();
+		return false
+	});
+
+
+
+	// Валидация
+	$('.valid-btn').on('click', function () {
+		$('.input-wrap__erro').remove();
+		$('.inp-error').removeClass('inp-error');
+		var way = $(this).parents('form');
+		var valIndex = 0;
+		var errorTxt;
+		var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
+		way.find('input').removeClass('inp-error');
+		way.find('.error-txt').fadeOut();
+		way.find('.valid-txt').each(function() {
+			var lengthVal = $(this).val().length;
+			if(lengthVal < 2) {
+				$(this).parent().addClass('inp-error');
+				errorTxt = $(this).attr('date-error');
+				$(this).parent().prepend('<div class="input-wrap__erro">'+ errorTxt +'</div>');
+				valIndex = 1
+			}
+		});
+		way.find('.valid-mail').each(function() {
+			console.log('test');
+			var lengthVal = $(this).val().length;
+			if(lengthVal < 2) {
+				$(this).parent().find('.error-txt').fadeIn();
+				$(this).parent().addClass('inp-error');
+				errorTxt = $(this).attr('date-error');
+				$(this).parent().prepend('<div class="input-wrap__erro">'+ errorTxt +'</div>');
+				valIndex = 1
+			} else {
+				if(!pattern.test($(this).val())){
+		            $(this).parent().find('.error-txt').fadeIn();
+		            $(this).parent().addClass('inp-error');
+		            errorTxt = $(this).attr('date-error');
+					$(this).parent().prepend('<div class="input-wrap__erro">'+ errorTxt +'</div>');
+		            valIndex = 1
+		        }
+	        }
+		});
+		way.find('.valid-phone').each(function() {
+			var lengthVal = $(this).val().length;
+			if(lengthVal < 7) {
+				$(this).parent().find('.error-txt').fadeIn();
+				$(this).addClass('inp-error');
+				valIndex = 1
+			}
+		});   
+
+		/*if(valIndex == 0) {
+			$('#modal-popup').modal('show')
+		};*/
+
+		return false
+	});
+
+
+
+
+
 	
 	$('.lnk-open-m').on('click', function () {
 		$(this).next('ul').slideToggle();

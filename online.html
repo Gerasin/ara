@@ -25,14 +25,14 @@
 				<header class="page-header">
 					<div class="container">
 						<h1 class="top-logo">
-							<img src="img/content/top-logo.png" alt="">
+							<img src="img/page/logo.svg" alt="">
 						</h1>
 						<div class="top-right head-top">
 							<ul class="head-top__menu">
-								<li><a href=""><img src="img/page/ico-user.png" alt=""> Александр</a></li>
-								<li><a href=""><img src="img/page/ico-mail.png" alt=""> Написать нам</a></li>
+								<li><a href="#autorize" class="fbox"><img src="img/page/ico-user.png" alt=""> Личный кабинет</a></li>
+								<li><a href="#contact" class="fbox"><img src="img/page/ico-mail.png" alt=""> Написать нам</a></li>
 								<li><a href=""><img src="img/page/ico-press.png" alt=""> Пресс-центр</a></li>
-								<li><a href="">Корзина <span><img src="img/page/ico-basket.png" alt=""><em>2</em></span></a></li>
+								<li class="guest-hide">Корзина <span><img src="img/page/ico-basket.png" alt=""><em>2</em></span></li>
 							</ul>
 							<ul class="head-top__soc"> 
 								<li><a href="" class="soc-fb"></a></li>
@@ -423,34 +423,165 @@
 
 
 		<div class="dnone">
-			<div id="contact">
+			<div id="contact" class="popup-wrap">
 				<div class="contact-wrap">
 					<div class="popup-header">
 						Написать письмо
 					</div>
 					<div class="popup-form">
-						<form action="#" method="post" id="validate-form">
+						<form action="#" method="post">
 							<div class="input-wrap">
 								<label>
 									Имя
 									<span class="must">*</span>
 								</label>
-								<input type="text" name="validate_name">
+								<div class="input-box">
+									<input type="text" date-error="Не ввели Имя" class="valid-txt">
+								</div>
 							</div>
 							<div class="input-wrap">
 								<label>
 									E-mail
 									<span class="must">*</span>
 								</label>
-								<input type="text" name="validate_email">
+								<div class="input-box">
+									<input type="text" date-error="Не ввели Эл.почту" class="valid-txt">
+								</div>
 							</div>
 							<div class="input-wrap">
 								<label>
 									Сообщение
 									<span class="must">*</span>
 								</label>
-								<textarea name="validate_msg"></textarea>
+								<div class="input-box">
+									<textarea date-error="Не ввели Сообщение" class="valid-txt"></textarea>
+								</div>
 							</div>
+							<div class="popup-submit-wrap">
+								<input type="submit" value="Отправить" class="popup-submit valid-btn">
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div id="autorize" class="autorize-popup popup-wrap">
+				<div class="contact-wrap">
+					<div class="popup-header">
+						Авторизация
+					</div>
+					<div class="popup-form">
+						<form action="#" method="post" class="validate-form">
+							<div class="input-wrap">
+								<label>
+									Логин
+								</label>
+								<input type="text">
+							</div>
+							<div class="input-wrap">
+								<label>
+									Пароль
+								</label>
+								<input type="password">
+								<div class="input-wrap__reg">
+									<a href="#password-recovery" class="fbox">Забыли пароль?</a>
+								</div>
+							</div>
+							
+							<div class="popup-submit-wrap">
+								<input type="submit" value="Войти" class="popup-submit"> <br>
+								<a href="#register" class="fbox">Регистрация</a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div id="register" class="register-popup popup-wrap">
+				<div class="contact-wrap">
+					<div class="popup-header">
+						Регистрация
+					</div>
+					<div class="popup-form">
+						<form action="#" method="post" id="validate-register">
+							<div class="input-wrap">
+								<label>
+									Имя
+									<span class="must">*</span>
+								</label>
+								<div class="input-box">
+									<input type="text" date-error="Не ввели Имя" class="valid-txt">
+								</div>
+							</div>
+							<div class="input-wrap">
+								<label>
+									Фамилия
+									<span class="must">*</span>
+								</label>
+								<div class="input-box">
+									<input type="text" date-error="Не ввели Фамилию" class="valid-txt">
+								</div>
+							</div>
+							<div class="input-wrap">
+								<label>
+									Электронная почта
+									<span class="must">*</span>
+								</label>
+								<div class="input-box">
+									<input type="text" date-error="Не ввели Эл.почту" class="valid-mail">
+								</div>
+							</div>
+							<div class="input-wrap">
+								<label>
+									Пароль
+									<span class="must">*</span>
+								</label>
+								<div class="input-box">
+									<input type="text" date-error="Не ввели Пароль" class="valid-txt">
+								</div>
+							</div>
+							<div class="input-wrap">
+								<label>
+									Повторите пароль
+									<span class="must">*</span>
+								</label>
+								<div class="input-box">
+									<input type="text" date-error="Не ввели Пароль" class="valid-txt">
+								</div>
+							</div>
+							<div class="input-wrap">
+								<label>
+									Введите капчу
+									<span class="must">*</span>
+								</label>
+								<div class="input-captcha">
+									<img src="img/captcha.jpg" alt=""> <br>
+									<div class="input-box">
+										<input type="text" date-error="Не ввели Капчу" class="valid-txt">
+									</div><br>
+									* Обязательные для заполнения поля
+								</div>
+							</div>
+							
+							<div class="popup-submit-wrap">
+								<input type="submit" value="Зарегистрироваться" class="popup-submit valid-btn">
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div id="password-recovery" class="password-recovery-popup popup-wrap">
+				<div class="contact-wrap">
+					<div class="popup-header">
+						Востановление пароля
+					</div>
+					<div class="popup-form">
+						<form action="#" method="post" class="validate-form">
+							<div class="input-wrap">
+								<label>
+									Введите свою электронную почту
+								</label>
+								<input type="text">
+							</div>
+							
 							<div class="popup-submit-wrap">
 								<input type="submit" value="Отправить" class="popup-submit">
 							</div>
@@ -458,6 +589,7 @@
 					</div>
 				</div>
 			</div>
+
 		</div>		
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

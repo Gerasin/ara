@@ -272,18 +272,16 @@ $('body').append(
 	'<div style="position: fixed; z-index: 9999; bottom: 0; right: 0; background: #fff; border: solid 1px #000; width: 250px;"> \
 		<a href="javascript:void(0);" style="float: right;background:#ccc; color:#000; padding: 5px 10px;position:relative;z-index:20;" onclick="$(this).parent().hide()">Закрыть X</a> \
 	<ol> \
-		<li><a href="index.html" style="color:#000;">Index</a></li> \
-		<li><a href="online.html" style="color:#000;">Online</a></li> \
-		<li><a href="online_guest.html" style="color:#000;">Online guest</a></li> \
-		<li><a href="news.html" style="color:#000;">News</a></li> \
-		<li><a href="news-in.html" style="color:#000;">News-in</a></li> \
-		<li><a href="avangard-life.html" style="color:#000;">Avangard-life</a></li> \
-		<li><a href="project.html" style="color:#000;">Project</a></li> \
-		<li><a href="about.html" style="color:#000;">About</a></li> \
-		<li><a href="buy.html" style="color:#000;">Buy</a></li> \
-		<li><a href="contacts.html" style="color:#000;">Contacts</a></li> \
-		<li><a href="press-center.html" style="color:#000;">Press-center</a></li> \
-		<li><a href="page404.html" style="color:#000;">Page404</a></li> \
-		<li><a href="text-page.html" style="color:#000;">Text-page</a></li> \
+		<li><a href="online.html" style="color:#000;">online</a></li> \
+		<li><a href="online_guest.html" style="color:#000;">online_guest</a></li> \
+		<li><a href="earch_result_null.html" style="color:#000;">earch_result_null</a></li> \
+		<li><a href="online_404.html" style="color:#000;">online_404</a></li> \
+		<li><a href="online_alfavit.html" style="color:#000;">online_alfavit</a></li> \
+		<li><a href="online_article.html" style="color:#000;">online_article</a></li> \
+		<li><a href="online_article_plus.html" style="color:#000;">online_article_plus</a></li> \
+		<li><a href="online_cabinet_history.html" style="color:#000;">online_cabinet_history</a></li> \
+		<li><a href="online_museums.html" style="color:#000;">online_museums</a></li> \
+		<li><a href="online_search_result.html" style="color:#000;">online_search_result</a></li> \
+		<li><a href="online_subscribe.html" style="color:#000;">online_subscribe</a></li> \
 	</ol> \
 </div>');
