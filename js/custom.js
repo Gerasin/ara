@@ -1,5 +1,46 @@
 $(document).ready(function() {
 
+	
+
+	// new js
+
+	$('.radio-close').on('click', function () {
+		$(this).parents('.radio-wr').find('input').prop('checked', false);
+		return false
+	});
+
+	$('.js-subscribe-add').on('click', function () {
+		$('.subscribe-add').slideDown();
+		$('.js-subscribe-add, .js-subscribe-gift').hide();
+		$('html, body').animate({'scrollTop' : $('.subscribe-add').offset().top });
+		return false
+	});
+	$('.js-subscribe-gift').on('click', function () {
+		$('.subscribe-gift').slideDown();
+		$('.js-subscribe-add, .js-subscribe-gift').hide();
+		$('html, body').animate({'scrollTop' : $('.subscribe-gift').offset().top });
+		return false
+	});
+	$('.js-autorize-next').on('click', function () {
+		$(this).parents('.step-wr').removeClass('active');
+		$(this).parents('.step-wr').find('.step-wr__hide').slideUp(400);
+		$(this).parents('.step-wr').next('.step-wr').addClass('active');
+		$(this).parents('.step-wr').next('.step-wr').find('.step-wr__hide').slideDown(400);
+		return false
+	}); 
+	$('.js-email-next').on('click', function () {
+		$(this).parents('.step-wr').removeClass('active');
+		$(this).parents('.step-wr').find('.step-wr__hide').slideUp(400);
+		$(this).parents('.step-wr').next('.step-wr').addClass('active');
+		$(this).parents('.step-wr').next('.step-wr').find('.step-wr__hide').slideDown(400);
+		return false
+	});
+
+	
+
+	// end new js
+
+
 	$('.subscribe-send').on('click', function () {
 		var subscribeCheck = $(this).parents('form').find('input[type="radio"]:checked').length;
 		if(subscribeCheck == 0) {
